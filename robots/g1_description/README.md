@@ -30,6 +30,18 @@ MJCF/URDF for the G1 robot:
 
 💡**Note:** The robot's `mode_machine` ID can be viewed in the app by navigating to **Device** → **Data** → **Robot** → **Machine Type**.
 
+## ROS 2
+
+From the workspace root:
+
+```bash
+colcon build --packages-select g1_description
+source install/setup.bash
+ros2 launch g1_description display.launch.xml model:=g1_29dof_mode_15
+```
+
+CMake adds `package://g1_description/` to mesh URLs in generated URDFs. The source models remain unchanged.
+
 ## Visulization with [MuJoCo](https://github.com/google-deepmind/mujoco)
 
 1. Open MuJoCo Viewer
